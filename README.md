@@ -1,185 +1,151 @@
-JobPortal2
-
-Internship II
-
-Job Portal System
+# Job Portal System
 
 A full-stack job portal application that allows job seekers to browse and apply for jobs, and employers to post and manage job listings. The platform includes features for user authentication, company management, job posting, job applications, and saved jobs.
 
-Project Structure
+## Project Structure
 
-├── backend/ # Backend Node.js application
-│ ├── controllers/ # Route controllers
-│ ├── models/ # MongoDB models
-│ ├── routes/ # API routes
-│ ├── middleware/ # Authentication & error handling
-│ └── utils/ # Utility functions
-├── frontend/ # React frontend application
-│ ├── public/ # Static assets
-│ └── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Page components
-│ ├── hooks/ # Custom hooks
-│ ├── services/ # API calls
-│ └── store/ # State management
+```
+├── backend/           # Backend Node.js application
+│   ├── controllers/   # Route controllers
+│   ├── middleware/    # Authentication & error handling
+│   ├── models/        # MongoDB models
+│   ├── routes/        # API routes
+│   └── utils/         # Utility functions
+├── frontend/          # React frontend application
+│   ├── public/        # Static files
+│   └── src/         
+│       ├── components/  # Reusable UI components
+│       ├── pages/       # Page components
+│       ├── hooks/       # Custom hooks
+│       ├── services/    # API services
+│       └── store/       # State management
+```
 
-Features
+## Features
 
-User Authentication & Authorization (Job Seekers & Employers)
+ - User Authentication & Authorization (Job Seekers & Employers)
+ - Company Profile Management
+ - Job Posting & Editing
+ - Job Search & Filtering
+ - Apply to Jobs
+ - Save Jobs for Later
+ - Application Tracking
+ - Responsive UI for all devices
+ - Secure API with JWT Authentication
+ - Cloudinary support for media uploads
 
-Company Profile Management
+## Technology Stack
 
-Job Posting & Editing
+### Backend
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+- Cloudinary(for file upload)
+- Multer
+- .env
 
-Job Search & Filtering
+### Frontend
+- React 18
+- Redux Toolkit
+- React Router
+- Axios
+- TailwinCss/MaterialUI
 
-Apply to Jobs
+## Getting Started
 
-Save Jobs for Later
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- MongoDB
 
-Application Tracking
+### Installation
 
-Responsive UI for all devices
+1. Clone the repository
+```bash
+git clone https://github.com/omhirvania123/JobPortal2.git
+cd JobPortal2
+```
 
-Secure API with JWT Authentication
-
-Cloudinary support for media uploads
-
-Technology Stack
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB + Mongoose
-
-JWT Authentication
-
-Cloudinary (for file uploads)
-
-Multer
-
-dotenv
-
-Frontend
-
-React 18
-
-Redux Toolkit
-
-React Router
-
-Axios
-
-TailwindCSS / Material UI (depending on your project setup)
-
-Getting Started
-Prerequisites
-
-Node.js (v14 or higher)
-
-npm or yarn
-
-MongoDB
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/your-username/jobportal-yt.git
-cd jobportal-yt
-
-
-Install Backend Dependencies:
-
+2. Install Backend Dependencies
+```bash
 cd backend
 npm install
+```
 
-
-Install Frontend Dependencies:
-
+3. Install Frontend Dependencies
+```bash
 cd frontend
 npm install
+```
 
-Running the Application
+### Running the Application
 
-Start the Backend Server:
-
+1. Start the Backend Server
+```bash
 cd backend
 npm start
+```
+The server will start on http://localhost:5001
 
-
-Backend will run on: http://localhost:5000
-
-Start the Frontend Development Server:
-
+2. Start the Frontend Development Server
+```bash
 cd frontend
 npm start
+```
+The frontend will start on http://localhost:3000
 
+### Docker Setup (Optional)
+```bash
+cd backend
+docker-compose up
+```
 
-Frontend will run on: http://localhost:3000
+## Environment Variables
 
-Environment Variables
-
-Create a .env file inside backend/:
-
+### Backend (.env)
+```
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 CLOUDINARY_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_secret
+```
 
-API Endpoints
-Auth Routes
+## API Endpoints
 
-POST /api/auth/register - Register a new user
+### Auth Routes
+- POST /api/auth/register - Register a new user
+- POST /api/auth/login - User login
 
-POST /api/auth/login - User login
+### Company Routes
+- POST /api/company - Create new company profile
+- GET /api/company/:id - Get company by ID
 
-Company Routes
+### Job Routes
+- GET /api/jobs - Get all jobs
+- POST /api/jobs - Create new job
+- GET /api/jobs/:id - Get job by ID
+- PUT /api/jobs/:id - Update job
 
-POST /api/company - Create new company profile
 
-GET /api/company/:id - Get company by ID
+### Application Routes
+- POST /api/applications - Apply for a job
+- GET /api/applications/user/:id - Get applications by user
+- GET /api/applications/job/:id - Get applications for a job
 
-Job Routes
+### Saved Jobs
+- POST /api/saved-jobs - Save a job
+- GET /api/saved-jobs/:userId - Get saved jobs for user
 
-GET /api/jobs - Get all jobs
+## Contributing
 
-POST /api/jobs - Create new job
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-GET /api/jobs/:id - Get job by ID
 
-PUT /api/jobs/:id - Update job
 
-Application Routes
-
-POST /api/applications - Apply for a job
-
-GET /api/applications/user/:id - Get applications by user
-
-GET /api/applications/job/:id - Get applications for a job
-
-Saved Jobs
-
-POST /api/saved-jobs - Save a job
-
-GET /api/saved-jobs/:userId - Get saved jobs for user
-
-Contributing
-
-Fork the repository
-
-Create your feature branch (git checkout -b feature/YourFeature)
-
-Commit your changes (git commit -m 'Add some feature')
-
-Push to the branch (git push origin feature/YourFeature)
-
-Open a Pull Request
-
-License
-
-This project is licensed under the MIT License.
